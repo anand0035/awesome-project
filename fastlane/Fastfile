@@ -1,0 +1,13 @@
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :build do
+    gradle(
+     task: "assemble",
+     project_dir: "./android/"
+    )
+  end
+
+end
+
