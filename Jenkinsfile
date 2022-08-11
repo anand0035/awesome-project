@@ -23,10 +23,10 @@ pipeline{
 //         }
         stage('build android'){
             steps{
-                sh "export ANDROID_SDK_ROOT=/root/android-sdk-linux"
+                //sh "export ANDROID_SDK_ROOT=/root/android-sdk-linux"
                 sh "chmod +x android/gradlew"
-                sh "/var/lib/gems/3.0.0/gems/fastlane-2.208.0/bin/fastlane android build"
-                // sh "fastlane "
+                //sh "/var/lib/gems/3.0.0/gems/fastlane-2.208.0/bin/fastlane android build"
+                 sh "fastlane android build"
             }
         }
     }
