@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+#export PATH=$PATH:/opt/homebrew/Cellar/fastlane/2.208.0/libexec/gems/fastlane-2.208.0/bin
+#export PATH=$PATH:/opt/homebrew/Cellar/fastlane/2.208.0/libexec/gems/fastlane-2.208.0/bin
+>>>>>>> 1170b67f8356f221cc232b23dc92d8dffda8c68a
 
 #export PATH=$PATH:/opt/homebrew/Cellar/fastlane/2.208.0/libexec/gems/fastlane-2.208.0/bin
 export ANDROID_SDK_ROOT=/root/android-sdk-linux
