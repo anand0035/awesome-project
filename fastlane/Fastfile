@@ -1,5 +1,6 @@
-export PATH=$PATH:/opt/homebrew/Cellar/fastlane/2.208.0/libexec/gems/fastlane-2.208.0/bin
 
+#export PATH=$PATH:/opt/homebrew/Cellar/fastlane/2.208.0/libexec/gems/fastlane-2.208.0/bin
+export ANDROID_SDK_ROOT=/root/android-sdk-linux
 
 default_platform(:android)
 
