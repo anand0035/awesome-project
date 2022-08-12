@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment {
             //Fastlane Environment Variables
-
+           ANDROID_SDK_ROOT="/root/android-sdk-linux"
            APP_NAME = "DEMO_APP"
             LC_ALL = "en_US.UTF-8"
             LANG = "en_US.UTF-8"
