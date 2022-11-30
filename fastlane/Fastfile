@@ -4,10 +4,51 @@ default_platform(:android)
 
 platform :android do
   desc "Runs all the tests"
+  puts git_branch
   lane :build do
+    teams_send('TESTING FATLANE NOTIFICATION 1')
     gradle(
      task: "assemble",
      project_dir: "./android/"
+    )
+    teams_send('TESTING FATLANE NOTIFICATION')
+  end
+  # lane :test do
+  #   teams_url ="https://kpitechservices1.webhook.office.com/webhookb2/f12923b5-4f97-4fc8-9a0b-36d927126820@d25f24a2-3b74-40e5-a5d0-08aa326c7b15/IncomingWebhook/0bebc98d12e6415790caf54ca2115c7e/e3032b06-bab6-4524-81c2-89d582d3a478"
+  #   teams(
+  #     title: "Fastlane says hello",
+  #     message: "App successfully released!",
+  #      facts:[
+  #       {
+  #         "name"=>"Platform",
+  #         "value"=>"Android"
+  #       },
+  #       {
+  #         "name"=>"Lane",
+  #         "value"=>"android internal"
+  #       }
+  #     ],
+  #     teams_url: teams_url
+  #   )
+  # end
+
+  def teams_send(messge_send,fact=[],color='0000FF')
+    teams(
+      title: "TEST",
+      message: messge_send,
+      theme_color: color,
+       facts: fact,
+      teams_url: "https://kpitechservices1.webhook.office.com/webhookb2/f12923b5-4f97-4fc8-9a0b-36d927126820@d25f24a2-3b74-40e5-a5d0-08aa326c7b15/IncomingWebhook/0bebc98d12e6415790caf54ca2115c7e/e3032b06-bab6-4524-81c2-89d582d3a478",
+     )
+  end
+  error do |lane, exception|
+    # Send error notification
+    teams(
+      title: "error",
+      message: "Something went wrong &#x1F627; ...",
+      theme_color: '#FF00FF',
+      teams_url: "https://kpitechservices1.webhook.office.com/webhookb2/f12923b5-4f97-4fc8-9a0b-36d927126820@d25f24a2-3b74-40e5-a5d0-08aa326c7b15/IncomingWebhook/0bebc98d12e6415790caf54ca2115c7e/e3032b06-bab6-4524-81c2-89d582d3a478",
+      facts: []
     )
   end
 
